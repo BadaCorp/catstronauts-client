@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
-import { Router } from '@reach/router';
+import { Router } from "@reach/router";
+import React, { Fragment } from "react";
+import Module from "./module";
+import Track from "./track";
 /** importing our pages */
-import Tracks from './tracks';
-import Track from './track';
-import Module from './module';
+import Tracks from "./tracks";
 
 export default function Pages() {
   return (

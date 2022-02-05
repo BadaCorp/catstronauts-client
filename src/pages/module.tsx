@@ -1,6 +1,6 @@
-import React from 'react';
-import { useQuery, gql } from '@apollo/client';
-import { Layout, ModuleDetail, QueryResult } from '../components';
+import { gql, useQuery } from "@apollo/client";
+import React from "react";
+import { Layout, ModuleDetail, QueryResult } from "../components";
 
 /**
  * GET_MODULE_AND_PARENT_TRACK gql query to retrieve a specific module and its parent track,
@@ -26,17 +26,23 @@ export const GET_MODULE_AND_PARENT_TRACK = gql`
   }
 `;
 
+interface ModuleProps {
+  path: string;
+  moduleId?: string;
+  trackId?: string;
+}
+
 /**
  * Module page fetches both parent track and module's data from the gql query GET_MODULE_AND_PARENT_TRACK
  * and feeds them to the ModuleDetail component
  */
-const Module = ({ moduleId, trackId }) => {
+const Module = ({ moduleId, trackId }: ModuleProps) => {
   const { loading, error, data } = useQuery(GET_MODULE_AND_PARENT_TRACK, {
     variables: { moduleId, trackId },
   });
 
   return (
-    <Layout fullWidth>
+    <Layout fullWidth grid={undefined}>
       <QueryResult error={error} loading={loading} data={data}>
         <ModuleDetail track={data?.track} module={data?.module} />
       </QueryResult>

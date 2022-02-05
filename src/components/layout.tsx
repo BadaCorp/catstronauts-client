@@ -6,7 +6,7 @@ import { unit, widths } from "../styles";
 interface LayoutProps {
   fullWidth: boolean;
   children: any;
-  grid: string;
+  grid: string | undefined;
 }
 
 /**
@@ -17,7 +17,7 @@ const Layout = ({ fullWidth, children, grid }: LayoutProps) => {
   return (
     <>
       <Header />
-      <PageContainer fullWidth={fullWidth} grid={grid}>
+      <PageContainer fullWidth={fullWidth} grid="center">
         {children}
       </PageContainer>
       <Footer />
@@ -28,7 +28,7 @@ const Layout = ({ fullWidth, children, grid }: LayoutProps) => {
 export default Layout;
 
 type PageContainerProps = {
-  grid: string;
+  grid: string | undefined;
   fullWidth: boolean | undefined;
 };
 
