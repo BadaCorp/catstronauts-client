@@ -39,7 +39,7 @@ const TrackCard = ({ track }: TrackCardProps) => {
     variables: { incrementTrackViewsId: id },
     // to observe what the mutation response returns
     onCompleted: (data) => {
-      console.log(data);
+      // console.log(data);
     },
   });
 
