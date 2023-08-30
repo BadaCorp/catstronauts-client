@@ -6,7 +6,8 @@ import GlobalStyles from "./styles";
 
 const client = new ApolloClient({
   // uri: "http://localhost:4000",
-  uri: "https://badacorp-catstronauts-server.herokuapp.com/",
+  // uri: "https://badacorp-catstronauts-server.herokuapp.com/",
+  uri: "https://catstronauts-server.onrender.com/",
   cache: new InMemoryCache(),
 });
 
